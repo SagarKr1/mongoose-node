@@ -1,6 +1,9 @@
 const express = require('express');
 require('dotenv').config();
-require('./components/database/dbCon')
+const db = require('./components/database/dbCon');
+const conDB = require('./components/database/dbCon');
+
+db.conDB()
 const app = express();
 
 app.use("/",require("./components/router/bookRoute"));
