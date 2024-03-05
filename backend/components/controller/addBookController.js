@@ -1,9 +1,4 @@
-const express = require('express');
-
-const router = express.Router();
-
-
-router.route("/api").post((req,res)=>{
+const add = async (req,res)=>{
     try{
         console.log("post request");
         return res.json({
@@ -16,7 +11,6 @@ router.route("/api").post((req,res)=>{
             body:e.message
         })   
     }
-})
+}
 
-
-module.exports = router;
+module.exports = {add};
