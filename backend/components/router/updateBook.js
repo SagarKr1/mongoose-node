@@ -2,12 +2,12 @@ const express = require('express');
 
 const router = express.Router();
 
-router.route("/").get((req,res)=>{
+router.route("/api/:id").put((req,res)=>{
     try{
-        console.log("get request");
+        console.log(`put request ${req.params.id}`);
         return res.json({
             statusCode:200,
-            body:"get request"
+            body:`put request ${req.params.id}`
         })
     }catch(e){
         return res.json({

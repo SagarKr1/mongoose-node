@@ -2,12 +2,12 @@ const express = require('express');
 
 const router = express.Router();
 
-router.route("/").get((req,res)=>{
+router.route("/api/:id").delete((req,res)=>{
     try{
-        console.log("get request");
+        console.log(`delete request ${req.params.id}`);
         return res.json({
             statusCode:200,
-            body:"get request"
+            body:`delete request ${req.params.id}`
         })
     }catch(e){
         return res.json({
@@ -16,5 +16,6 @@ router.route("/").get((req,res)=>{
         })   
     }
 })
+
 
 module.exports = router;
