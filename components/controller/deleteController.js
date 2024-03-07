@@ -5,7 +5,7 @@ const deleteData = async (req,res)=>{
         const query = req.params;
         console.log(query);
         const params = {
-            "id":query.id
+            "_id":query.id
         }
         const getData = await book.deleteOne(params);
         return res.json({

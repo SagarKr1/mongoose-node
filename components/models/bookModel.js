@@ -18,7 +18,7 @@ const bookSchema = mongoose.Schema({
         required:true
     },
     release_date:{
-        type:Date,
+        type:String,
         required:true
     }
 })

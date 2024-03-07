@@ -6,9 +6,9 @@ const getBook = async (req, res) => {
         const query = req.params;
         console.log(query);
         const params = {
-            "id":query.id
+            "_id":query.id
         }
-        const getData = await book.find(params);
+        const getData = await book.findOne(params);
         return res.json({
             statusCode: 200,
             body: getData
