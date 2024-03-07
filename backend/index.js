@@ -6,6 +6,8 @@ const conDB = require('./components/database/dbCon');
 db.conDB()
 const app = express();
 
+app.use(express.json());
+
 app.use("/",require("./components/router/bookRoute"));
 
 

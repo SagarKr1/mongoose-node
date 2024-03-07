@@ -1,9 +1,17 @@
+const book = require('../models/bookModel');
+
+
 const getBook = async (req, res) => {
     try {
-        console.log("get request");
+        const query = req.params;
+        console.log(query);
+        const params = {
+            "id":query.id
+        }
+        const getData = await book.find(params);
         return res.json({
             statusCode: 200,
-            body: "get request "+req.params.id
+            body: getData
         })
     } catch (e) {
         return res.json({
@@ -15,10 +23,11 @@ const getBook = async (req, res) => {
 
 const getAll = async (req, res) => {
     try {
-        console.log("get request");
+        const getData = await book.find();
+        console.log(getData);
         return res.json({
             statusCode: 200,
-            body: "get request"
+            body:getData
         })
     } catch (e) {
         return res.json({
@@ -27,6 +36,7 @@ const getAll = async (req, res) => {
         })
     }
 }
+
 module.exports = {
     getBook,
     getAll
